@@ -1,0 +1,114 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminDashboard.master.cs" Inherits="Student_attendance_system.AdminDashboard" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Dashboard - Student Attendance System</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <style>
+        /* Global styles */
+ 
+    body{
+    font-family: Arial, sans-serif;
+    background-image: url('Images/sgmcollege2.png');
+    background-size: cover;
+    }
+  
+
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background-color: darkcyan;
+    width: 100%;
+    margin: 0 auto;
+    height: 90px;
+}
+
+header h1 {
+   margin-left: 20px; 
+    padding: 0;
+    font-size: 30px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 40px;
+}
+
+nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-weight:600;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    margin-top:20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Content page specific styles */
+h2 {
+    color: #333;
+}
+
+/* Add more specific styles for your content pages as needed */
+
+
+    </style>
+     <asp:ContentPlaceHolder ID="head" runat="server" />
+</head>
+<body>
+    <header>
+        <form runat="server">
+        <div class="header">
+          
+            <h1>Student Attendance System</h1>
+           
+            <nav>
+                <ul>
+                    <li><asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/home.aspx">Home</asp:LinkButton></li>
+                    <li> <asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/Student.aspx">Add Student</asp:LinkButton> </li>
+                    <li><asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/GenerateQR.aspx">Take Attendance</asp:LinkButton></li>
+                    <li><asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/Report.aspx">View Attendance</asp:LinkButton></li>
+                    <li><asp:LinkButton ID="LinkButton5" runat="server" OnClick="LinkButton5_Click">Log Out</asp:LinkButton></li>
+                    <!-- Add more navigation links as needed -->
+                </ul>
+            </nav>
+        </div>
+             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+</form>
+    </header>
+
+   
+   
+
+    <footer>
+        <p>&copy; 2024 Student Attendance System</p>
+    </footer>
+</body>
+</html>
